@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA329ABF16FA4662001C86B5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DA329ABE16FA4662001C86B5 /* Default.png */; };
+		DA329AC116FA4752001C86B5 /* ic_launcher-web copy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA329AC016FA4752001C86B5 /* ic_launcher-web copy.png */; };
+		DA329AC316FA477A001C86B5 /* ic_launcher-web 1copy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA329AC216FA477A001C86B5 /* ic_launcher-web 1copy.png */; };
 		DA55A0CE16B5FAAF008AE844 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55A0CD16B5FAAF008AE844 /* UIKit.framework */; };
 		DA55A0D016B5FAAF008AE844 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55A0CF16B5FAAF008AE844 /* Foundation.framework */; };
 		DA55A0D216B5FAAF008AE844 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55A0D116B5FAAF008AE844 /* CoreGraphics.framework */; };
@@ -42,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA329ABE16FA4662001C86B5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DA329AC016FA4752001C86B5 /* ic_launcher-web copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_launcher-web copy.png"; sourceTree = "<group>"; };
+		DA329AC216FA477A001C86B5 /* ic_launcher-web 1copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_launcher-web 1copy.png"; sourceTree = "<group>"; };
 		DA55A0C916B5FAAF008AE844 /* uniMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uniMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA55A0CD16B5FAAF008AE844 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DA55A0CF16B5FAAF008AE844 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,6 +106,9 @@
 		DA55A0BE16B5FAAF008AE844 = {
 			isa = PBXGroup;
 			children = (
+				DA329AC216FA477A001C86B5 /* ic_launcher-web 1copy.png */,
+				DA329AC016FA4752001C86B5 /* ic_launcher-web copy.png */,
+				DA329ABE16FA4662001C86B5 /* Default.png */,
 				DA55A0D316B5FAAF008AE844 /* uniMobile */,
 				DA55A10516B5FAB0008AE844 /* uniMobileTests */,
 				DA55A0CC16B5FAAF008AE844 /* Frameworks */,
@@ -190,6 +199,7 @@
 				DA55A0C516B5FAAF008AE844 /* Sources */,
 				DA55A0C616B5FAAF008AE844 /* Frameworks */,
 				DA55A0C716B5FAAF008AE844 /* Resources */,
+				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -261,6 +271,9 @@
 				DA55A0F116B5FAB0008AE844 /* first@2x.png in Resources */,
 				DA55A0F616B5FAB0008AE844 /* second.png in Resources */,
 				DA55A0F816B5FAB0008AE844 /* second@2x.png in Resources */,
+				DA329ABF16FA4662001C86B5 /* Default.png in Resources */,
+				DA329AC116FA4752001C86B5 /* ic_launcher-web copy.png in Resources */,
+				DA329AC316FA477A001C86B5 /* ic_launcher-web 1copy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +288,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
 		DA55A0FC16B5FAB0008AE844 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,7 +391,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -394,7 +420,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -415,6 +441,7 @@
 				GCC_PREFIX_HEADER = "uniMobile/uniMobile-Prefix.pch";
 				INFOPLIST_FILE = "uniMobile/uniMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -426,6 +453,7 @@
 				GCC_PREFIX_HEADER = "uniMobile/uniMobile-Prefix.pch";
 				INFOPLIST_FILE = "uniMobile/uniMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -483,6 +511,7 @@
 				DA55A11216B5FAB0008AE844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA55A11316B5FAB0008AE844 /* Build configuration list for PBXNativeTarget "uniMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +520,7 @@
 				DA55A11516B5FAB0008AE844 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
